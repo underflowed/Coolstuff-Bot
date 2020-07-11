@@ -20,8 +20,9 @@ class CoolBotClient(discord.Client):
         if message.content.startswith('$'):
             cardname = message.content
             cardname = cardname.replace('$',"")
+            cardname = cardname.replace(" ","%")
             cardinfo, url = parser.GetCardText(cardname)
-            await message.channel.send("```{0}```\nget it today at {1} !".format(cardinfo, url))
+            await message.channel.send("```{0}```\nget it today at {1}".format(cardinfo, url))
         if message.content.startswith('!pairings'):
             await message.channel.send("{0}".format(challonge.GetPairings()))
 

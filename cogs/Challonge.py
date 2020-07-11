@@ -16,8 +16,8 @@ class ChallongeTournament():
     def GetPairings(self):
         accumalator = ""
         for match in self.matches:
-            player1 = ""
-            player2 = ""
+            player1 = None
+            player2 = None
             for participant in self.participants:
                 if match["state"] == "open":
                     if match["player1-id"]  == participant["id"]:
