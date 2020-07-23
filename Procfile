@@ -1,1 +1,1 @@
-initializebot:python CoolBot.py
+worker: python CoolBot.py
