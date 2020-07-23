@@ -1,4 +1,4 @@
-
+#Entry point for the bot
 import discord
 from cogs.Parser import Parser
 from cogs.Challonge import ChallongeTournament
@@ -20,9 +20,9 @@ class CoolBotClient(discord.Client):
         if message.content.startswith('$'):
             cardname = message.content
             cardname = cardname.replace('$',"")
-            cardname = cardname.replace(" ","%")
+            cardname = cardname.replace(" ","%20")
             cardinfo, url = parser.GetCardText(cardname)
-            await message.channel.send("```{0}```\nget it today at {1}".format(cardinfo, url))
+            await message.channel.send("```{0}```\n{1}".format(cardinfo, url))
         if message.content.startswith('!pairings'):
             await message.channel.send("{0}".format(challonge.GetPairings()))
 
